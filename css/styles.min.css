@@ -76,8 +76,9 @@ html {
 body {
   font-family: 'Mountains of Christmas', cursive;
   color: cornsilk;
-  background-color: #de2f32;
+  background-color: red;
   padding-top: 1px;
+  position: relative;
 }
 
 .title {
@@ -122,6 +123,11 @@ body {
 .santa:hover .hat__main::after {
   -webkit-animation: pompon .2s .2s 10;
           animation: pompon .2s .2s 10;
+}
+
+.santa:hover .hat__main::before {
+  -webkit-animation: hat .2s .5s 3;
+          animation: hat .2s .5s 3;
 }
 
 .santa__beard {
@@ -311,6 +317,183 @@ body {
   75% {
     right: -32%;
     bottom: -41%;
+  }
+}
+
+@-webkit-keyframes hat {
+  25% {
+    -webkit-transform: skew(0, 41deg);
+            transform: skew(0, 41deg);
+    right: -16%;
+  }
+  75% {
+    -webkit-transform: skew(0, 26deg);
+            transform: skew(0, 26deg);
+    right: -17%;
+  }
+}
+
+@keyframes hat {
+  25% {
+    -webkit-transform: skew(0, 41deg);
+            transform: skew(0, 41deg);
+    right: -16%;
+  }
+  75% {
+    -webkit-transform: skew(0, 26deg);
+            transform: skew(0, 26deg);
+    right: -17%;
+  }
+}
+
+.star {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  z-index: 1;
+  background-color: snow;
+  overflow: hidden;
+  -webkit-animation: glitter 4s infinite;
+          animation: glitter 4s infinite;
+}
+
+.star__top::before, .star__top::after, .star__bottom::before, .star__bottom::after {
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: red;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.star__top::before {
+  top: -50%;
+  left: -50%;
+}
+
+.star__top::after {
+  top: -50%;
+  right: -50%;
+}
+
+.star__bottom::before {
+  bottom: -50%;
+  left: -50%;
+}
+
+.star__bottom::after {
+  bottom: -50%;
+  right: -50%;
+}
+
+@-webkit-keyframes glitter {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  75% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes glitter {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  75% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.year {
+  font-size: 150px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 35px;
+  height: 125px;
+  line-height: 110px;
+  color: transparent;
+  background: url("../../images/wave.png") repeat-x;
+  background-size: 200px 100px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 0 0 rgba(255, 255, 255, 0.2);
+  -webkit-animation: wave 1s infinite,  loading 10s 3s infinite alternate;
+          animation: wave 1s infinite,  loading 10s 3s infinite alternate;
+}
+
+@-webkit-keyframes wave {
+  0% {
+    background-position: 0 bottom;
+  }
+  100% {
+    background-position: 200px bottom;
+  }
+}
+
+@keyframes wave {
+  0% {
+    background-position: 0 bottom;
+  }
+  100% {
+    background-position: 200px bottom;
+  }
+}
+
+@-webkit-keyframes loading {
+  0% {
+    background-size: 200px 0;
+  }
+  100% {
+    background-size: 200px 200px;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-size: 200px 0;
+  }
+  100% {
+    background-size: 200px 200px;
   }
 }
 /*# sourceMappingURL=styles.min.css.map */

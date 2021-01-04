@@ -1,0 +1,78 @@
+.star {
+    @include size(50px);
+    @include pos($t: 50%, $l: 20%, $z: 1);
+    background-color: snow;
+    overflow: hidden;
+    animation: glitter 4s infinite;
+
+    &__top,
+    &__bottom {
+
+        &::before,
+        &::after {
+            @include size(100%);
+            content: '';
+            background-color: red;
+            position: absolute;
+            border-radius: 50%;
+        }
+    }
+
+    &__top {
+        &::before {
+            top: -50%;
+            left: -50%;
+        }
+
+        &::after {
+            top: -50%;
+            right: -50%;
+        }
+    }
+
+    &__bottom {
+        &::before {
+            bottom: -50%;
+            left: -50%;
+        }
+
+        &::after {
+            bottom: -50%;
+            right: -50%;
+        }
+    }
+}
+
+
+
+@keyframes glitter{
+
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    25% {
+        transform: scale(.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 1;
+
+    }
+
+    75% {
+        transform: scale(.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+
+}

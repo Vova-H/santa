@@ -19,8 +19,14 @@
         }
 
 
-        .hat__main::after {
-            animation: pompon .2s .2s 10;
+        .hat__main {
+            &::after {
+                animation: pompon .2s .2s 10;
+            }
+
+            &::before{
+                animation: hat .2s .5s 3;
+            }
         }
     }
 
@@ -63,6 +69,9 @@
             box-shadow: 2px 6px 8px #e4e4e4;
         }
     }
+
+
+
 }
 
 .eyes {
@@ -163,5 +172,22 @@
     75% {
         right: -32%;
         bottom: -41%;
+    }
+}
+
+
+
+@keyframes hat {
+
+    25% {
+        
+        transform: skew(0, 41deg);
+        right: -16%;
+
+    }
+
+    75% {
+        transform: skew(0, 26deg);
+        right: -17%;
     }
 }

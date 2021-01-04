@@ -1,0 +1,42 @@
+.year{
+    font-size: 150px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 35px;
+    height: 125px;
+    line-height: 110px;
+    color: transparent;
+    background: url('../../images/wave.png') repeat-x;
+    background-size: 200px 100px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: 0 0 rgba(255, 255, 255, .2);
+
+    animation: wave 1s infinite, 
+    loading 10s 3s infinite alternate;
+    
+
+}
+
+@keyframes wave{
+
+    0%{
+        background-position: 0 bottom;
+    }
+
+    100%{
+        background-position: 200px bottom;
+    }
+}
+
+
+@keyframes loading{
+
+    0%{
+        background-size: 200px 0;
+    }
+
+    100%{
+        background-size: 200px 200px;
+    }
+}
